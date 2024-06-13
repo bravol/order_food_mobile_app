@@ -9,6 +9,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool iceCream = false, pizza = false, salad = false, burger = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,50 +45,114 @@ class _HomeState extends State<Home> {
               'Discover and get great food in town ',
               style: AppWidget.lightTextStyle(),
             ),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    height: 50,
-                    width: 50,
-                    child: Image.asset('assets/images/pizza.png'),
+                GestureDetector(
+                  onTap: () {
+                    iceCream = true;
+                    pizza = false;
+                    salad = false;
+                    burger = false;
+                    setState(() {});
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: iceCream ? Colors.black : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: 50,
+                      width: 50,
+                      child: Image.asset(
+                        'assets/images/ice-cream.png',
+                        color: iceCream ? Colors.white : Colors.black,
+                      ),
+                    ),
                   ),
                 ),
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    height: 50,
-                    width: 50,
-                    child: Image.asset('assets/images/salad.png'),
+                GestureDetector(
+                  onTap: () {
+                    iceCream = false;
+                    pizza = true;
+                    salad = false;
+                    burger = false;
+                    setState(() {});
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: pizza ? Colors.black : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: 50,
+                      width: 50,
+                      child: Image.asset(
+                        'assets/images/pizza.png',
+                        color: pizza ? Colors.white : Colors.black,
+                      ),
+                    ),
                   ),
                 ),
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    height: 50,
-                    width: 50,
-                    child: Image.asset('assets/images/burger.png'),
+                GestureDetector(
+                  onTap: () {
+                    iceCream = false;
+                    pizza = false;
+                    salad = true;
+                    burger = false;
+                    setState(() {});
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: salad ? Colors.black : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: 50,
+                      width: 50,
+                      child: Image.asset(
+                        'assets/images/salad.png',
+                        color: salad ? Colors.white : Colors.black,
+                      ),
+                    ),
                   ),
                 ),
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    height: 50,
-                    width: 50,
-                    child: Image.asset('assets/images/ice-cream.png'),
+                GestureDetector(
+                  onTap: () {
+                    iceCream = false;
+                    pizza = false;
+                    salad = false;
+                    burger = true;
+                    setState(() {});
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: burger ? Colors.black : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: 50,
+                      width: 50,
+                      child: Image.asset(
+                        'assets/images/burger.png',
+                        color: burger ? Colors.white : Colors.black,
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(width: 10.0)
               ],
             )
           ],
