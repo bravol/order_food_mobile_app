@@ -22,9 +22,18 @@ class AppWidget {
   static TextStyle lightTextStyle() {
     return const TextStyle(
       color: Colors.black38,
-      fontSize: 18.0,
+      fontSize: 15.0,
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle semiBoldTextStyle() {
+    return const TextStyle(
+      color: Colors.black87,
+      fontSize: 18.0,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w700,
     );
   }
 }
