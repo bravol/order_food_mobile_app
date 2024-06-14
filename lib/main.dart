@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:order_food_app/pages/login.dart';
+import 'package:order_food_app/pages/onboard.dart';
+import 'package:order_food_app/pages/signup.dart';
 import 'package:order_food_app/widgets/bottom_nav.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const BottomNavigationBarDown(),
-      home: const Login(),
+      home: const Onboard(),
     );
   }
 }

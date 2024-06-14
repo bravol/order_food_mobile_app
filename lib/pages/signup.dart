@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:order_food_app/pages/forgot_password.dart';
-import 'package:order_food_app/pages/signup.dart';
+import 'package:order_food_app/pages/login.dart';
 import 'package:order_food_app/widgets/bottom_nav.dart';
 import 'package:order_food_app/widgets/support_widget.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -60,7 +59,7 @@ class _LoginState extends State<Login> {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: size.width,
-                      height: size.height / 2,
+                      height: size.height / 1.5,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: const BoxDecoration(
                           color: Colors.white,
@@ -69,8 +68,15 @@ class _LoginState extends State<Login> {
                         children: [
                           const SizedBox(height: 30),
                           Text(
-                            'Login',
+                            'Sign up',
                             style: AppWidget.headerTextStyle(),
+                          ),
+                          const SizedBox(height: 30),
+                          TextField(
+                            decoration: InputDecoration(
+                                hintText: 'Name',
+                                hintStyle: AppWidget.semiBoldTextStyle(),
+                                prefixIcon: const Icon(Icons.person_outline)),
                           ),
                           const SizedBox(height: 30),
                           TextField(
@@ -88,33 +94,25 @@ class _LoginState extends State<Login> {
                                 prefixIcon:
                                     const Icon(Icons.password_outlined)),
                           ),
-                          const SizedBox(height: 20),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ForgotPassword()));
-                            },
-                            child: Container(
-                              alignment: Alignment.topRight,
-                              child: Text(
-                                'Forgot Password?',
-                                style: AppWidget.semiBoldTextStyle(),
-                              ),
-                            ),
+                          const SizedBox(height: 30),
+                          TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                hintText: 'Confirm Password',
+                                hintStyle: AppWidget.semiBoldTextStyle(),
+                                prefixIcon:
+                                    const Icon(Icons.password_outlined)),
                           ),
                           const SizedBox(height: 80),
                           GestureDetector(
-                            onTap: () => {
+                            onTap: () {
                               Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
                                         const BottomNavigationBarDown()),
                                 (Route<dynamic> route) => false,
-                              )
+                              );
                             },
                             child: Material(
                               elevation: 5.0,
@@ -127,7 +125,7 @@ class _LoginState extends State<Login> {
                                     borderRadius: BorderRadius.circular(20)),
                                 child: const Center(
                                   child: Text(
-                                    'LOGIN',
+                                    'SIGNUP',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.0,
@@ -148,10 +146,10 @@ class _LoginState extends State<Login> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignUp()));
+                              builder: (context) => const Login()));
                     },
                     child: Text(
-                      "Don't have an account? Sign up",
+                      "Already have an account? Login",
                       style: AppWidget.semiBoldTextStyle(),
                     ),
                   )
