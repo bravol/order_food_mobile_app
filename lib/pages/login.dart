@@ -13,7 +13,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         child: Stack(
           children: [
             Container(
@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
             ),
             Container(
               width: size.width,
-              height: size.height / 2,
+              height: size.height / 1,
               margin: EdgeInsets.only(top: size.height / 3),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: size.width,
-                      height: size.height / 2.5,
+                      height: size.height / 2,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: const BoxDecoration(
                           color: Colors.white,
@@ -93,9 +93,7 @@ class _LoginState extends State<Login> {
                               style: AppWidget.semiBoldTextStyle(),
                             ),
                           ),
-                          const SizedBox(
-                            height: 50,
-                          ),
+                          const SizedBox(height: 80),
                           Material(
                             elevation: 5.0,
                             borderRadius: BorderRadius.circular(20),
