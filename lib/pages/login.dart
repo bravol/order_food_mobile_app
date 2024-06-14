@@ -54,18 +54,20 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 50.0),
                   Material(
                     elevation: 5.0,
+                    borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: size.width,
                       height: size.height / 2.5,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: const BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
                       child: Column(
                         children: [
+                          const SizedBox(height: 30),
                           Text(
                             'Login',
-                            style: AppWidget.semiBoldTextStyle(),
+                            style: AppWidget.headerTextStyle(),
                           ),
                           const SizedBox(height: 30),
                           TextField(
@@ -76,6 +78,7 @@ class _LoginState extends State<Login> {
                           ),
                           const SizedBox(height: 30),
                           TextField(
+                            obscureText: true,
                             decoration: InputDecoration(
                                 hintText: 'Password',
                                 hintStyle: AppWidget.semiBoldTextStyle(),
@@ -91,7 +94,7 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           const SizedBox(
-                            height: 80,
+                            height: 50,
                           ),
                           Material(
                             elevation: 5.0,
@@ -113,10 +116,15 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
+                  ),
+                  const SizedBox(height: 70),
+                  Text(
+                    "Don't have an account? Sign up",
+                    style: AppWidget.semiBoldTextStyle(),
                   )
                 ],
               ),
