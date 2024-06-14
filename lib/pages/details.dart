@@ -103,14 +103,56 @@ class _DetailsState extends State<Details> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
-            Row(
-              children: [
-                Text(
-                  'Total Price',
-                  style: AppWidget.semiBoldTextStyle(),
-                ),
-              ],
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Total Price',
+                        style: AppWidget.semiBoldTextStyle(),
+                      ),
+                      Text('\$30.5', style: AppWidget.boldTextStyle()),
+                    ],
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    width: size.width / 2,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const Text(
+                          'Add to Cart',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
+                        const SizedBox(width: 40),
+                        Container(
+                          padding: const EdgeInsets.all(3),
+                          decoration: const BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          child: const Icon(
+                            Icons.shopping_cart_outlined,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(width: 20)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
