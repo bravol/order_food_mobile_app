@@ -59,7 +59,7 @@ class _SignUpState extends State<SignUp> {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: size.width,
-                      height: size.height / 1.5,
+                      height: size.height / 1.7,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: const BoxDecoration(
                           color: Colors.white,
